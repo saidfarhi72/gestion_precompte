@@ -1,0 +1,183 @@
+<%- include('layouts/top.ejs')%>
+<br><br><br><br>
+
+
+<main class="main">
+    <div style="display: flex; justify-content: center; align-items: center; width:90%;">
+        <div style="margin-left: 150px; margin-right: 25px; width: 75%;">
+
+            <div  style=" text-align: center;">
+            </div>
+            <br>
+            <div style=" text-align: center;">
+                <h1>etat</h1>
+                      
+            </div>
+        </div>
+
+    </div>
+<div class="box-nav d-flex justify-between"  >
+    <form method="POST" action="etat" id="update_user"  class="box-nav d-flex row ">
+        <div class="box-nav d-flex row ">
+            <div class="form-group">
+                <input type="text" name="dossier" value="" placeholder="dossier">
+            </div>
+    
+        </div>
+        <div class="box-nav d-flex row ">
+            <div class="form-group">
+                <input type="text" name="matricule" value="" placeholder="matricule">
+            </div>
+            
+        </div>
+        <button type="submit" class="text-gradient">cherche</button>
+    </form>
+    <div class="box-nav d-flex row ">
+        <div class="form-group etat_total">
+            <button> <a href="/etat/total">etat total</a></button>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="table-container table">
+    <table>
+      <thead class="thead-dark">
+          <tr>
+              <th>
+                  matricule
+              </th>
+              <th>
+                  code organisme
+              </th>
+              <th>
+                  imputation
+              </th>
+              <th>
+                  dossier
+              </th>
+              <th>
+                  datedebet
+              </th>
+              <th>
+                  datfinet
+              </th>
+         
+              <th>
+                  totolpre
+              </th>
+          
+              <th>
+            
+                  restpaye
+              </th>
+              <th>
+            
+                  menspret
+              </th>
+              <th>
+            
+                  cumulpre
+              </th>
+              <th>
+            
+                  montcomp
+              </th>
+              <th>
+            
+                  etatpret
+              </th>
+              <th>
+            
+                  motifrad
+              </th>
+              <th>
+                dteffrad
+              </th>
+              <th>
+            
+                  moisencr
+              </th>
+              
+          </tr>
+      </thead>
+      <tbody>
+          <% if(arr){ %>
+          <% for (let ele of arr) {%>
+
+          <tr>
+              <td>
+                  <%=ele.matricule%>
+              </td>
+              <td>
+                  <%=ele.code_organisme%>
+              </td>
+              <td>
+                  <%=ele.imputation%>
+              </td>
+              <td>
+                  <%=ele.dossier%>
+              </td>
+              <td>
+                  <%=Intl.DateTimeFormat('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit'}).format(ele.datdebet)%>
+              </td>
+              <td>
+                <%=Intl.DateTimeFormat('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit'}).format(ele.datefinet)%>
+              </td>
+              <td>
+                  <%=ele.totalpre%>
+              </td>
+              <td>
+                  <%=ele.restpaye%>
+              </td>
+              <td>
+                  <%=ele.menspret%>
+              </td>
+              <td>
+                  <%=ele.cumulpre%>
+              </td>
+              <td>
+                  <%=ele.montcomp%>
+              </td>
+              <td>
+                  <%=ele.etatpret%>
+              </td>
+              <td>
+                  <%=ele.motifrad%>
+              </td>
+              <td>
+                <% if(ele.dteffrad){ %>
+
+                
+                <%=Intl.DateTimeFormat('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit'}).format(ele.dteffrad)%>
+                <% } %> 
+                
+
+
+
+              </td>
+              <td>
+                <%=Intl.DateTimeFormat('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit'}).format(ele.moinsencr)%>
+
+              </td>
+            
+              
+        
+             
+              
+          </tr>
+          <% } %> 
+          <% } %>
+
+          
+
+      </tbody>
+    </table>
+
+
+
+  </div>
+  
+</main>

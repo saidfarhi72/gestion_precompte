@@ -1,0 +1,179 @@
+<%- include('layouts/top.ejs')%>
+<br><br><br><br>
+
+
+<main class="main">
+    <div style="display: flex; justify-content: center; align-items: center; width:90%;">
+        <div style="margin-left: 150px; margin-right: 25px; width: 75%;">
+
+            <div  style=" text-align: center;">
+            </div>
+            <br>
+            <div style=" text-align: center;">
+                <h1>etat</h1>
+                      
+            </div>
+        </div>
+
+    </div>
+<div class="box-nav d-flex justify-between"  >
+    <form method="POST" action="/etat/attestation" id="update_user"  class="box-nav d-flex row ">
+      
+        <div class="box-nav d-flex row ">
+            <div class="form-group">
+                <input type="text" name="matricule" value="" placeholder="matricule">
+            </div>
+            
+        </div>
+        <button type="submit" class="text-gradient">cherche</button>
+    </form>
+</div>
+
+
+
+<div class="table-container table" style="height: 40vh; overflow-x: hidden;">
+    <table >
+      <thead class="thead-dark">
+          <tr>
+              <th>
+                  dossier
+              </th>
+              <th>
+                  intitule
+              </th>
+              <th>
+                  date debut
+              </th>
+              <th>
+                  date fin 
+              </th>
+              <th>
+                  montant pret
+              </th>
+              <th>
+                  mensualite
+              </th>
+         
+              <th>
+                  dure(mois)
+              </th>
+          
+              <th>
+            
+                prel_total
+              </th>
+              <th>
+            
+                Reste
+              </th>
+              <th>
+            
+                  compense
+              </th>
+              
+              
+          </tr>
+      </thead>
+      <tbody>
+          <% if(etat){ %>
+          <% for (var i=0; i<etat.length; i++) {%>
+              
+              
+              
+            <tr>
+                <% for (var j=0; j<etat[i].length; j++) {%>
+                <td>
+                <%= etat[i][j] %>
+
+                </td>
+              
+                 <% } %> 
+            </tr>
+              <% } %> 
+          <% } %>
+
+          
+
+      </tbody>
+    </table>
+
+
+
+  </div>
+  <div style="display: flex; justify-content: center; align-items: center; width:90%;">
+    <div style="margin-left: 150px; margin-right: 25px; width: 75%;">
+
+        <div  style=" text-align: center;">
+        </div>
+        <br>
+        <div style=" text-align: center;">
+            <h1>anticipation</h1>
+                  
+        </div>
+    </div>
+
+</div> 
+ <div class="table-container table" style="height: 40vh; overflow-x: hidden;" >
+    <table  >
+      <thead class="thead-dark">
+          <tr>
+            <th>
+                dossier
+            </th>
+              <th>
+                  intitule
+              </th>
+              <th>
+                  date
+              </th>
+              <th>
+                  montant
+              </th>
+              <th>
+                  motif
+              </th>
+              <th>
+                remarque
+            </th>
+           
+            
+
+              
+          </tr>
+      </thead>
+      <tbody>
+          <% if(anticipation){ %>
+          <% for (var i=0; i<anticipation.length; i++) {%>
+              
+              
+              <tr>
+              <% for (var j=0; j<anticipation[i].length; j++) {%>
+              <td>
+                <%= anticipation[i][j] %>
+              </td>
+              <% } %> 
+              
+          
+        
+              
+          </tr>
+          <% } %>
+          <% } %>
+          
+
+
+
+          
+
+      </tbody>
+    </table>
+
+
+
+</div>
+<div class="download">
+  <button type="submit"  ><a href="/etat/attestation/<%=matricule%>">download</a></button>
+
+</div>
+  
+</main>

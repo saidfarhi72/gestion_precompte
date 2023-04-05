@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <title> app </title>
+    <link href="/css/styles.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&family=PT+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+<link rel="stylesheet" href="/css/styleEtat.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+    body{
+        background-color:#fff;
+        color: rgb(59, 54, 54);
+
+
+    }
+*{
+	list-style: none;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+nav{
+    padding: 0px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    height: 50px;
+    width: 100%;
+    transform: translate3d(0, 0, 0);
+    
+    
+
+}
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.nav>ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    height: 60px;
+    font-size: 14px;
+    line-height: 60px;
+    white-space: nowrap;
+    overflow: hidden;
+    
+
+
+}
+ul{
+  list-style: none;
+}
+
+
+.logo{
+height: 120px;
+}
+
+.nav>ul>li{
+    margin: 0px  10px 0px 10px;
+}
+.nav>ul>li>a{
+    color: rgb(15, 14, 14);
+    margin: 0px  10px 0px 10px;
+}
+
+
+.nav>ul>li>a:hover{
+  border-bottom:thin solid #f19a03;
+ padding-bottom: 5px;
+  box-shadow: 0 1px 0px #704f14;
+  font-weight: bold;
+}
+
+
+a {
+    text-decoration: none; 
+    color: black ;
+       
+}
+
+.info{
+  margin-top: 50px;
+  width: 100px;
+  left: 0px;
+  height: 100px;
+  position: relative;
+  
+  
+
+}
+.settings{
+  background-color:  rgba(121, 118, 118, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  font-size: 20px;
+  right: 10px;
+  top: 70px;
+  width:200px;
+}
+
+.user{
+    color: rgb(15, 14, 14);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid black;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  height: 50px;
+  width: 100px;
+  text-align: center;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.deconnexion{
+  display: flex;
+  color: rgb(15, 14, 14);
+
+  padding-top: 0px;
+  margin-top: 0px;
+  border:thin solid rgba(121, 118, 118, 0);
+  background-color:  rgba(121, 118, 118, 0);
+  height: 30px;
+  font-size: 20px;
+}
+
+
+
+.wrapper .sidebar{
+    background-color: rgb(253, 254, 254);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 225px;
+	height: 100%;
+	padding: 20px 0;
+	transition: all 0.5s ease;
+    box-shadow: 0 2px 2px #cbccd7;
+    z-index: 1000;
+
+}
+
+.wrapper .sidebar .profile{
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.wrapper .sidebar .profile img{
+	display: block;
+	width: 100px;
+	height: 100px;
+    border-radius: 50%;
+	margin: 0 auto;
+}
+
+.wrapper .sidebar .profile h3{
+	color: rgb(15, 14, 14);
+	margin: 10px 0 5px;
+}
+
+.wrapper .sidebar .profile p{
+	color: rgb(15, 14, 14);
+	font-size: 14px;
+}
+
+.wrapper .sidebar ul li a{
+	display: block;
+	padding: 13px 30px;
+	border-bottom: 1px solid #9e9fa0;
+	color: rgb(15, 14, 14);
+	font-size: 16px;
+	position: relative;
+}
+
+.wrapper .sidebar ul li a .icon{
+	color: #dee4ec;
+	width: 30px;
+	display: inline-block;
+}
+
+ 
+
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+	color: #0c7db1;
+
+	background:white;
+    border-right: 2px solid rgb(168, 176, 181);
+}
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon{
+	color: #0c7db1;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+	display: block;
+}
+
+.wrapper .section{
+    
+	width: calc(100% - 225px);
+	margin-left: 225px;
+	transition: all 0.5s ease;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 1000;
+}
+
+.wrapper .section .top_navbar{
+    background-color: rgb(248, 248, 248);
+    position: sticky;
+	top: 0;
+	left: 0;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	padding: 0 30px;
+    box-shadow: 0 1px 2px #cbccd7;
+
+    
+ 
+}
+
+.wrapper .section .top_navbar .hamburger a{
+	font-size: 28px;
+	color: rgb(15, 14, 14);
+}
+
+.wrapper .section .top_navbar .hamburger a:hover{
+	color: #a2ecff;
+}
+
+ 
+
+body.active .wrapper .sidebar{
+	left: -225px;
+}
+
+body.active .wrapper .section{
+	margin-left: 0;
+	width: 100%;
+}
+body.active .main{
+	margin-left: 0;
+	width: 100%;
+}
+.main{
+   
+    margin-left: 225px;
+    transition: all 0.5s ease;
+    color: rgb(15, 14, 14)
+;
+    
+
+    
+}
+
+
+button ,input{
+    background-color: rgb(193, 213, 244);
+    color: rgb(67, 50, 50);
+}
+
+    </style>
+
+
+</head>
+<body>
+    <% if(verifUser){ %>
+
+   
+        <div class="wrapper">
+            <div class="section">
+                <div class="top_navbar">
+                    <div class="hamburger">
+                        <a href="#">
+                            <i class="fas fa-bars"></i>
+                        </a>
+                    </div>
+                    <nav>
+                    <div class="logoContainer">
+                        
+                    </div>
+                    <div class="nav">
+                        
+                        <ul>
+                            <% if(verifAdmin){ %>
+                    
+                            <li><a href="/reservation">reservation</a></li>
+                            <% } %>
+
+                            <li><a href="/credit">credit</a></li> 
+ 
+                            <li><a href="/annulation"> annulation</a></li>
+                            <li><a href="/annulationInstance"> annulation inst.</a></li>   
+   
+                            
+                            <li><a href="/etat"> etat</a></li>   
+                        </ul>
+                    </div>
+                    <% if(verifUser){ %>
+    
+                    
+                    <div class="info">
+                            <div class="user" id="user">
+                                <%=verifUser %>
+                                
+                                <span class="material-symbols-outlined">
+                                    expand_more
+                                    </span>
+                            </div>
+                            <ul class="settings">
+                                <li id="decon">
+                
+                                </li>
+                                <li id="modification">
+                
+                                </li>
+                              
+                
+                            </ul>
+                            
+                            
+                        </div>
+                        <% } %>
+    
+                    </nav>
+                </div>
+                 
+            </div>
+            <div class="sidebar">
+                <div class="profile">
+                    <img src="/logo.jfif" alt="profile_picture">
+                    <h3>precompte</h3>
+                </div>
+                <ul>
+                    <% if(verifAdmin){ %>
+
+                    <li>
+                        <a href="/reservation">
+                            <span class="item">reservation</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/reponse" >
+                            <span class="item">rep. de reservation</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/confirmation">
+                            <span class="item">confirmation</span>
+                        </a>
+                    </li>
+
+                
+                    <li>
+                        <a href="/annulation/reponse">
+                            <span class="item">rep. annulation</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/annulationInstance/reponse">
+                            <span class="item">rep. annulation inst.</span>
+                        </a>
+                    </li>
+                    <% } %>
+                    <li>
+
+                        <a href="/suivi/upload">
+                            <span class="item">insert suivi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/etat/attestation">
+                            <span class="item">etat de payement</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/history">
+                            <span class="item">history</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+        <% } %>
+
+<script>
+
+ var hamburger = document.querySelector(".hamburger");
+ hamburger.addEventListener("click", function(){
+     document.querySelector("body").classList.toggle("active");
+ })
+</script>
+<script>
+  
+
+    var user = document.getElementById('user');
+
+    user.addEventListener('click', function () {
+        if (document.getElementById('logout') && document.getElementById('edit')) {
+            document.getElementById('logout').remove();
+            document.getElementById('edit').remove()
+            
+    
+        } else {
+            var form = document.createElement("form");
+            form.id = 'logout';
+            form.action = '/logout';
+            form.method='POST';
+            form.className='border'
+            var button = document.createElement("button");
+            
+            button.type = "submit";
+            button.innerText = "Log out   ";
+            button.className = 'deconnexion'
+          
+            form.appendChild(button);
+            var form2= document.createElement("form");
+            form2.id = 'edit';
+            form2.action = '/edit/reservation';
+            form2.method='GET';
+            form2.className='border'
+
+            var button2 = document.createElement("button");
+              
+            button2.type = "submit";
+            button2.innerText = "edit   ";
+            button2.className = 'deconnexion'
+            form2.appendChild(button2);
+            
+          
+            document.getElementById('modification').appendChild(form2)
+
+
+            document.getElementById('decon').appendChild(form)
+
+
+        }
+    });
+    
+     
+        
+     </script>

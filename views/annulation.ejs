@@ -1,0 +1,116 @@
+<%- include('layouts/top.ejs')%>
+
+<br><br><br><br>
+
+ <main class="main">
+    <div style="display: flex; justify-content: center; align-items: center; width:90%;">
+        <div style="margin-left: 150px; margin-right: 25px; width: 75%;">
+
+            <div  style=" text-align: center;">
+            </div>
+            <br>
+            <div style=" text-align: center;">
+                <h1>annulation</h1>
+                      
+            </div>
+        </div>
+
+    </div>
+ 
+<div class="table-container table">
+      <table>
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    code organisme
+                </th>
+                <th>
+                    code revendeur
+                </th>
+                <th>
+                    nom et prenom
+                </th>
+                <th>
+                    cin
+                </th>
+                <th>
+                    matricule
+                </th>
+                <th>
+                    imputation
+                </th>
+                <th>
+                    type d'operation
+                </th>
+                <th>
+                    dossier
+                </th>
+            
+                <th>
+              
+                    Montant
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <% if(arr){ %>
+            <% for (let ele of arr) {%>
+
+            <tr>
+                <td>
+                    <%=ele.code_organisme%>
+                </td>
+                <td>
+                    <%=ele.code_revendeur%>
+                </td>
+                <td>
+                    <%=ele.name%>
+                </td>
+                <td>
+                    <%=ele.cin%>
+                </td>
+                <td>
+                    <%=ele.matricule%>
+                </td>
+                <td>
+                    <%=ele.imputation%>
+                </td>
+                <td>
+                    4
+                </td>
+                <td>
+                    <%=ele.dossier%>
+                </td>
+              
+                
+               
+                <td>
+                    <%=ele.montant_de_mensualite%>
+                </td>
+               
+                
+            </tr>
+            <% } %> 
+            <% } %>
+
+            
+
+        </tbody>
+      </table>
+
+
+
+    </div>
+    <div class="download">
+        <button type="submit"  ><a href="/annulation/download">download</a></button>
+
+    </div>
+
+</main>
+
+  
+
+
+    
+<%-include('layouts/battom.ejs')%>

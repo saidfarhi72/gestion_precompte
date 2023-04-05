@@ -1,0 +1,106 @@
+<%- include('layouts/top.ejs')%>
+
+<br><br><br><br> <br>
+
+ <main class="main">
+    <div style="display: flex; justify-content: center; align-items: center; width:90%;">
+        <div style="margin-left: 150px; margin-right: 25px; width: 75%;">
+
+            <div  style=" text-align: center;">
+            </div>
+            <br>
+            <div style=" text-align: center;">
+                <h1>edit norme</h1>
+                      
+            </div>
+        </div>
+
+
+    </div>
+
+    <form method="POST" action="/edit/reservation"   class="grid-container">
+        <div class="">
+
+            <div class="">
+              <label >code organisme</label>
+              <input type="number" value="<%= setting[0] %>" class="form-control " name="code_organisme" placeholder="code organisme" style="background-color:rgb(196, 201, 213) ;"  required>
+            </div>
+        </div>
+        <div class="">
+
+            <div class="-">
+              <label >matricule</label>
+              <input type="number" value="<%= setting[1] %>" class="form-control " name="matricule" placeholder="matricule" style="background-color:rgb(196, 201, 213) ;"  required>
+            </div>
+        </div>
+        <div class="">
+
+            <div class="">
+              <label >nom et prenom</label>
+              <input type="number" value="<%= setting[2] %>" class="form-control " name="name" placeholder="nom et prenom" style="background-color:rgb(196, 201, 213) ;"  required>
+            </div>
+        </div>
+        <div class="">
+
+            <div class="-">
+              <label >cin partie alphabetique</label>
+              <input type="number" value="<%= setting[3] %>" class="form-control " name="cin_char" placeholder="cin partie alphabetique" style="background-color:rgb(196, 201, 213) ;"  required>
+            </div>
+        </div>
+        <div class="">
+
+            <div class="-">
+              <label >cin partie numerique</label>
+              <input type="number" value="<%= setting[4] %>" class="form-control " name="cin_int" placeholder="cin partie numerique" style="background-color:rgb(196, 201, 213) ;"  required>
+            </div>
+        </div>
+        <div class="">
+            
+            <div class="-">
+                <label >code retour</label>
+                <input type="number" value="<%= setting[5] %>" class="form-control " name="code" placeholder="code retour" style="background-color:rgb(196, 201, 213) ;"  required>
+            </div>
+        </div>
+        <div class="">
+            
+            <div class="-">
+                <label >dossier</label>
+                <input type="number" value="<%= setting[6] %>" class="form-control " name="dossier" placeholder="dossier" style="background-color:rgb(196, 201, 213) ;"  required>
+            </div>
+        </div>
+        <div class="">
+            
+            <div class="-">
+              <label >dure de pret</label>
+              <input type="number" value="<%= setting[7] %>" class="form-control " name="dure_de_pret" placeholder="dure de pret" style="background-color:rgb(196, 201, 213) ;"  required>
+            </div>
+        </div>
+        <div class="">
+            
+            <div class="-">
+                <label >nombre de mois differes</label>
+                <input type="number" value="<%= setting[8] %>" class="form-control " name="mois_differes" placeholder="nombre de mois differes" style="background-color:rgb(196, 201, 213) ;"  required>
+            </div>
+        </div>
+        
+        <div class="">
+
+            <div class="-">
+              <label >imputation</label>
+              <input type="number" value="<%= setting[9] %>" class="form-control " name="imputation" placeholder="imputation" style="background-color:rgb(196, 201, 213) ;"  required>
+            </div>
+        </div>
+        <div class="">
+            
+            <div class="-">
+                <label >montant TGR</label>
+              <input type="number" value="<%= setting[10] %>" class="form-control " name="montant_TGR" placeholder="montant TGR" style="background-color:rgb(196, 201, 213) ;"  required>
+            </div>
+        </div>
+        <input type="submit" class="btn btn-primary" value="edit"  style="cursor: pointer;"/>
+        
+        
+           
+
+    </form>
+<%-include('layouts/battom.ejs')%>

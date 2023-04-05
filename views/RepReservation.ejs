@@ -1,0 +1,102 @@
+<%- include('layouts/top.ejs')%>
+<main class="main">
+    
+    <br><br><br>
+    <div style="display: flex; justify-content: center; align-items: center; width:90%;">
+        <div style="margin-left: 150px; margin-right: 25px; width: 75%;">
+
+            <div  style=" text-align: center;">
+            </div>
+            <br>
+            <div style=" text-align: center;">
+                <h1>reponse de reservation</h1>
+                      
+            </div>
+        </div>
+
+    </div>
+<div class="containerSuivant">
+    <div class="suivant"> 
+        <span class="material-symbols-outlined">
+            arrow_back_ios_new
+            </span>
+        <a href="/reservation">presedent</a>
+      </div>
+    <div class="suivant">
+         <a href="/confirmation">suivant</a> 
+         <span class="material-symbols-outlined">
+            arrow_forward_ios
+            </span>
+        </div>
+</div>
+
+<% if(faild){ %>
+    <div style="text-align: center;">
+        <span style="color: red; ">
+          
+          <%=faild%>
+        </span>
+
+    </div>
+    <% } %>
+
+    <% if(succes){ %>
+        <div style="text-align: center;">
+            <span style="color: rgb(0, 255, 89); ">
+              
+              <%=succes%>
+            </span>
+    
+        </div>
+        <% } %>
+<div class="container-form-resp">
+
+
+    <form  enctype   =  "multipart/form-data" action="/reponse" method="post" class="RepConfirmationForm">
+        <label for="fileRes">
+            <img src="file.png" class="upload-icon" >
+            <br> 
+        <input type="file" id="fileRes" name="file" class="file"   required />
+        
+        <span id="filenameRes"></span> <br>
+        </label>
+        <input type="submit" value="Upload " name="submit">
+    </form>
+    <div style="display: flex; align-items: center; justify-content: center;">
+
+        <div class="download">
+            <button type="submit"  ><a href="reponse/download">confirmation</a></button>
+    
+         </div>
+         <div class="download">
+            <button type="submit"  ><a href="reponse/accepte/download">accepted</a></button>
+    
+         </div>
+         <div class="download">
+            <button type="submit"  ><a href="reponse/notaAccept/download">rejected</a></button>
+    
+         </div>
+    </div>
+
+
+
+
+
+
+</div>
+</main>
+
+
+<script>
+    let input = document.getElementById("fileRes");
+    let filename = document.getElementById("filenameRes");
+
+    input.addEventListener("change", ()=>{
+        let inputImage = document.querySelector("input[type=file]").files[0];
+
+        filename.innerText = inputImage.name;
+    })
+</script>
+
+
+<%-include('layouts/battom.ejs')%>

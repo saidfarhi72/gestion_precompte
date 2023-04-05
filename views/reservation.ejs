@@ -1,0 +1,275 @@
+<%- include('layouts/top.ejs')%>
+
+<br><br><br><br> <br>
+
+ <main class="main">
+    <div style="display: flex; justify-content: center; align-items: center; width:90%;">
+        <div style="margin-left: 150px; margin-right: 25px; width: 75%;">
+
+            <div  style=" text-align: center;">
+            </div>
+            <br>
+            <div style=" text-align: center;">
+                <h1>reservation</h1>
+                      
+            </div>
+        </div>
+
+    </div>
+
+    <div class="containerSuivant">
+        <div></div>
+        <div class="suivant"> 
+            <a href="/reponse">suivant</a>
+            <span class="material-symbols-outlined">
+                arrow_forward_ios
+                </span>
+          </div>
+    </div>
+    <% if(no){ %>
+        <div style="text-align: center;">
+            <span style="color: red; ">
+              
+              <%=no%>
+            </span>
+
+        </div>
+        <% } %>
+ 
+
+    <% if(succes){ %>
+        <div style="text-align: center;">
+            <span style="color: rgb(8, 235, 20); ">
+              
+              <%=succes%>
+            </span>
+
+        </div>
+        <% } %>
+
+
+        <% if(message){ %>
+            <div style="text-align: center;">
+                <span style="color: red; ">
+                  
+                  <%=message%>
+                </span>
+
+            </div>
+            <% } %>
+            <% if(max_dossier){ %>
+                <div style="font-weight: bold;margin-left: 200px;">
+                    <span style="color: rgb(55, 0, 255); ">
+                      le dernier des dossier : 
+                      <%=max_dossier%>
+                    </span>
+    
+                </div>
+                <% } %>
+    <form method="POST" action="reservation/upload"  enctype="multipart/form-data" class="grid-container">
+        <div class="data">
+
+            <div class="form-group">
+              <label >montant de credit</label>
+              <input type="number" id="" class="form-control " name="montant_credit" placeholder="montant de credit" style="background-color:rgb(196, 201, 213) ;"  required>
+            </div>
+            <div class="utlities">
+                <div id="select">
+                    <label for="mySelect">utilities</label>
+                    <% if(intitule){ %>
+
+                    <select id="mySelect" name="utilities" class="col" >
+                        <% for (let ele of intitule) {%>
+
+                        <option value="<%=ele.utilities%>"><%=ele.utilities%></option>
+                        <% } %> 
+
+                      </select>
+                </div>
+                <% } %>
+
+                  <div class="form-group">
+                    <label for="add">add</label>
+                    <input type="checkbox" id="maidenname"  name="check" >
+                  </div>
+            </div>
+            <% if(faildIntitule){ %>
+                <div style="text-align: center;">
+                    <span style="color: red; ">
+                      
+                      <%=faildIntitule%>
+                    </span>
+    
+                </div>
+                <% } %>
+
+            <div id="utilities" class="form-group added ">
+                <label for="" id="label"></label>
+           
+            </div>
+        </div>
+       
+          <div class="form-group">
+            <label for="fileRep" style="cursor: pointer;">
+                <img src="file.png" class="upload-icon" >
+    
+                 <br> 
+            <input type="file" id="fileRep" name="file" class="file" required />
+            <span id="filenameRep"></span> <br>
+            </label>
+            <input type="submit" class="btn btn-primary" value="add" name="submit" style="cursor: pointer;"/>
+          </div>
+          
+      </form>
+      <div style="display: flex; align-items: center; justify-content: center;">
+
+         <div class="download">
+            <button type="submit"  ><a href="reservation/duplicated/download">duplicated</a></button>
+    
+         </div>
+         
+         <div class="download">
+            <button type="submit"  ><a href="reservation/elreadyRes/download">elready</a></button>
+    
+         </div>
+         <div class="download">
+            <button type="submit"  ><a href="reservation/notInsertRes/download">not insert res</a></button>
+    
+         </div>
+         
+         <div class="download">
+            <button type="submit"  ><a href="reservation/notInsertClient/download">not inserted client</a></button>
+    
+         </div>
+   
+    </div>
+
+<div class="table-container table">
+      <table>
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    code organisme
+                </th>
+                <th>
+                    code revendeur
+                </th>
+                <th>
+                    nom et prenom
+                </th>
+                <th>
+                    cin
+                </th>
+                <th>
+                    matricule
+                </th>
+                <th>
+                    imputation
+                </th>
+                <th>
+                    type d'operation
+                </th>
+                <th>
+                    dossier
+                </th>
+            
+                <th>
+              
+                    Montant
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <% if(arr){ %>
+            <% for (let ele of arr) {%>
+
+            <tr>
+                <td>
+                    <%=ele.code_organisme%>
+                </td>
+                <td>
+                    <%=ele.code_revendeur%>
+                </td>
+                <td>
+                    <%=ele.name%>
+                </td>
+                <td>
+                    <%=ele.cin%>
+                </td>
+                <td>
+                    <%=ele.matricule%>
+                </td>
+                <td>
+                    <%=ele.imputation%>
+                </td>
+                <td>
+                    <%=ele.type_operation%>
+                </td>
+                <td>
+                    <%=ele.dossier%>
+                </td>
+              
+                
+               
+                <td>
+                    <%=ele.montant_de_mensualite%>
+                </td>
+               
+                
+            </tr>
+            <% } %> 
+            <% } %>
+
+            
+
+        </tbody>
+      </table>
+
+
+
+    </div>
+    <div class="download">
+        <button type="submit"  ><a href="reservation/download">download</a></button>
+
+    </div>
+</main>
+
+
+ <script>
+  
+
+var checkbox = document.getElementById('maidenname');
+window.addEventListener('load', (event) => {
+  checkbox.checked=false
+});
+checkbox.addEventListener('click', function () {
+    if (document.getElementById('mn')) {
+        document.getElementById('mn').remove();
+      
+
+    
+
+    } else {
+        var input = document.createElement("input");
+        input.id = 'mn';
+        input.type = 'text';
+        input.name = 'addutilities';
+        input.placeholder = ' utilitie';
+        document.getElementById("utilities").appendChild(input);
+    }
+});
+
+    let input = document.getElementById("fileRep");
+    let filename = document.getElementById("filenameRep");
+
+    input.addEventListener("change", ()=>{
+        let inputImage = document.querySelector("input[type=file]").files[0];
+
+        filename.innerText = inputImage.name;
+    })
+
+    
+ </script>
+    
+<%-include('layouts/battom.ejs')%>

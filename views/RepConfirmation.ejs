@@ -1,0 +1,112 @@
+<%- include('layouts/top.ejs')%>
+<br><br><br>
+<% if(dont){ %>
+    <div style="display: flex; justify-content: center; align-items: center; width:90%;">
+        <div style="margin-left: 150px; margin-right: 25px; width: 75%;">
+
+            <div style="color: red; text-align: center;">
+                      
+                 con't insert(dossier)
+              </div>
+            <div  style=" text-align: center;">
+                <%= dont %>
+            </div>
+            <br>
+        </div>
+
+    </div>
+
+<% } %>
+
+<main class="main">
+    <div style="display: flex; justify-content: center; align-items: center; width:90%;">
+        <div style="margin-left: 150px; margin-right: 25px; width: 75%;">
+
+            <div  style=" text-align: center;">
+            </div>
+            <br>
+            <div style=" text-align: center;">
+                <h1>reponse de confirmation</h1>
+                      
+            </div>
+        </div>
+
+    </div>
+    <div class="containerSuivant">
+        <div class="suivant"> 
+            <span class="material-symbols-outlined">
+                arrow_back_ios_new
+                </span>
+            <a href="/reponse">presedent</a>
+          </div>
+        <div >
+            
+            </div>
+    </div>
+
+<% if(message){ %>
+    <div style="text-align: center;">
+        <span style="color: red; ">
+          
+          <%=message%>
+        </span>
+
+    </div>
+    <% } %>
+    <% if(succes){ %>
+        <div style="text-align: center;">
+            <span style="color: rgb(8, 235, 20); ">
+              
+              <%=succes%>
+            </span>
+
+        </div>
+        <% } %>
+<div class="container-form-resp">
+    <form  enctype   =  "multipart/form-data" action="/confirmation" method="post" class="RepConfirmationForm">
+        <label for="fileRep">
+            <img src="file.png" class="upload-icon" >
+
+             <br> 
+        <input type="file" id="fileRep" name="file" class="file" required />
+        <span id="filenameRep"></span> <br>
+        </label>
+        <input type="submit" value="Upload" name="submit">
+    </form>
+
+</div>
+<div style="display: flex; align-items: center; justify-content: center;">
+
+
+     <div class="download">
+        <button type="submit"  ><a href="confirmation/notaAccept/download">rejected</a></button>
+
+     </div>
+</div>
+
+</main>
+
+
+
+ 
+
+
+
+<script>
+    let input = document.getElementById("fileRep");
+    let filename = document.getElementById("filenameRep");
+
+    input.addEventListener("change", ()=>{
+        let inputImage = document.querySelector("input[type=file]").files[0];
+
+        filename.innerText = inputImage.name;
+    })
+</script>
+
+
+
+
+
+
+
+<%-include('layouts/battom.ejs')%>

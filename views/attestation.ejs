@@ -1,0 +1,46 @@
+<%- include('layouts/top.ejs')%>
+<br><br><br>
+
+
+<main class="main">
+
+    <div style="display: flex; justify-content: center; align-items: center; width:90%;">
+        <div style="margin-left: 150px; margin-right: 25px; width: 75%;">
+
+            <div  style=" text-align: center;">
+            </div>
+            <br>
+            <div style=" text-align: center;">
+                <h1>etat de payement</h1>
+                      
+            </div>
+        </div>
+
+    </div>
+
+<div class="center"  >
+    <% if(message){ %>
+        <div style="text-align: center;">
+            
+            <span style="color: red; ">
+              
+              <%=message%>
+            </span>
+
+        </div>
+        <% } %>
+    <form method="POST" action="/etat/attestation" id="update_user"  class=" ">
+        
+        <div class="matriculeBox ">
+            <div class="form-group">
+                <input type="text" name="matricule" value="" placeholder="matricule" class="matricule">
+            </div>
+            
+        </div>
+        <button type="submit" class="text-gradient cherche">cherche</button>
+    </form>
+</div>
+
+</main>
+
+

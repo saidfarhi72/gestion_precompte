@@ -1,0 +1,72 @@
+<%- include('layouts/top.ejs')%>
+<br><br><br>
+
+<main class="main">
+    <div style="display: flex; justify-content: center; align-items: center; width:90%;">
+        <div style="margin-left: 150px; margin-right: 25px; width: 75%;">
+
+            <div  style=" text-align: center;">
+            </div>
+            <br>
+            <div style=" text-align: center;">
+                <h1>reponse d'annulation</h1>
+                      
+            </div>
+        </div>
+
+    </div>
+   
+          </div>
+    </div>
+    <br><br><br>
+
+
+<% if(message){ %>
+    <div style="text-align: center;">
+        <span style="color: red; ">
+          
+          <%=message%>
+        </span>
+
+    </div>
+    <% } %>
+
+<div class="container-form-resp">
+    <form  enctype   =  "multipart/form-data" action="/annulation/reponse" method="post" class="RepConfirmationForm">
+        <label for="fileRep">
+            <img src="/file.png" class="upload-icon" >
+
+             <br> 
+        <input type="file" id="fileRep" name="file" class="file" required />
+        <span id="filenameRep"></span> <br>
+        </label>
+        <input type="submit" value="Upload" name="submit">
+    </form>
+
+</div>
+</main>
+
+
+
+ 
+
+
+
+<script>
+    let input = document.getElementById("fileRep");
+    let filename = document.getElementById("filenameRep");
+
+    input.addEventListener("change", ()=>{
+        let inputImage = document.querySelector("input[type=file]").files[0];
+
+        filename.innerText = inputImage.name;
+    })
+</script>
+
+
+
+
+
+
+
+<%-include('layouts/battom.ejs')%>

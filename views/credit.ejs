@@ -1,0 +1,95 @@
+<%- include('layouts/top.ejs')%>
+<br><br><br><br>
+
+
+<main class="main">
+    <div style="display: flex; justify-content: center; align-items: center; width:90%;">
+        <div style="margin-left: 150px; margin-right: 25px; width: 75%;">
+
+            <div  style=" text-align: center;">
+            </div>
+            <br>
+            <div style=" text-align: center;">
+                <h1>credit</h1>
+                      
+            </div>
+        </div>
+
+    </div>
+    <% if(dejaAnnuler){ %>
+        <br><br>
+        <div style="text-align: center;">
+            <span style="color: red; ">
+              
+              <%=dejaAnnuler%>
+            </span>
+    
+        </div>
+        <br><br>
+        <% } %>
+        <% if(dejaAnnulerInstance){ %>
+            <br><br>
+            <div style="text-align: center;">
+                <span style="color: red; ">
+                  
+                  <%=dejaAnnulerInstance%>
+                </span>
+        
+            </div>
+            <br><br>
+            <% } %>
+<div class="box-nav d-flex justify-between"  >
+    <form method="POST" action="credit" id="update_user"  class="box-nav d-flex row ">
+        <div class="box-nav d-flex row ">
+            <div class="form-group">
+                <input type="text" name="dossier" value="" placeholder="dossier">
+            </div>
+    
+        </div>
+        <div class="box-nav d-flex row ">
+            <div class="form-group">
+                <input type="text" name="matricule" value="" placeholder="matricule">
+            </div>
+            
+        </div>
+        <button type="submit" class="text-gradient">cherche</button>
+    </form>
+</div>
+
+    <div class="container">
+      
+
+        <!-- form handling -->
+        <form action="/" method="POST">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>dossier</th>
+                        <th>matricule</th>
+                        <th>name</th>
+                        <th>cin</th>
+                        <th>montant</th>
+                        <% if(verifAdmin){ %>
+
+                        <th>antipation</th>
+                        <th>annulation</th>
+                        <% } %>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <%- include('layouts/show') %>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</main>
+
+
+
+
+
+
+
+

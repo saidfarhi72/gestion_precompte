@@ -1,0 +1,42 @@
+<%- include('layouts/top.ejs')%>
+<br><br><br><br><br><br>
+
+
+
+<div class="login-form">
+  <form method="POST" action='/login'>
+    <h1>Login</h1>
+    <div class="content">
+      <div class="input-field">
+        <input type="email" placeholder="Email" autocomplete="nope" name="email">
+      </div>
+      <% if(messagemail){ %>
+        <span style="color: red; ">
+          <%=messagemail%>
+
+        </span>
+        <% } %>
+      <div class="input-field">
+        <input type="password" placeholder="Password" autocomplete="new-password" name="password">
+      </div>
+      <% if(messagePSs){ %>
+        <span style="color: red; ">
+          
+          <%=messagePSs%>
+        </span>
+        <% } %>
+    </div>
+    <div class="action">
+      <button type="submit">Sign in</button>
+    </div>
+
+
+  </form>
+</div>
+<!-- partial -->
+
+
+
+
+
+<%-include('layouts/battom.ejs')%>

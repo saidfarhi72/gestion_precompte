@@ -1,0 +1,39 @@
+{
+  "name": "stage1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "connect-flash": "^0.1.1",
+    "connect-session-sequelize": "^7.1.4",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "fs": "^0.0.1-security",
+    "fs-extra": "^10.1.0",
+    "msnodesqlv8": "^2.6.0",
+    "mssql": "^8.1.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "on-finished": "^2.4.1",
+    "path": "^0.12.7",
+    "pdfkit-table": "^0.1.99",
+    "sequelize": "^6.21.3",
+    "sqlite": "^4.1.2",
+    "sqlite3": "^5.0.9",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}

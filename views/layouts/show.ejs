@@ -1,0 +1,27 @@
+<% for(var i = 0; i < users.length; i++) { %>
+    <tr>
+        <td><%= users[i].dossier %></td>
+        <td><%= users[i].matricule %></td>
+        <td><%= users[i].name %></td>
+        <td><%= users[i].cin %></td>
+        <td><%= users[i].montant_credit %></td>
+        <% if(verifAdmin){ %>
+
+        <td>
+           
+            <a href="/annulation/delete/<%= users[i].dossier%>" class="btn border-shadow delete"  onclick="return confirm('Are you sure to delete this dossier ?')"" >
+                <span class="text-gradient"><i class="fas fa-times"></i></span>
+            </a>
+          
+            
+        </td>
+        <td>
+            <a href="/annulationInstance/delete/<%= users[i].dossier%>" class="btn border-shadow delete"  onclick="return confirm('Are you sure to delete this dossier ?')"" >
+                <span class="text-gradient"><i class="fas fa-times"></i></span>
+            </a>
+        </td>
+        <% } %>
+
+    </tr>
+    <% } %>
+   

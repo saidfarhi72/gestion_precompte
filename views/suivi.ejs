@@ -1,0 +1,213 @@
+<%- include('layouts/top.ejs')%>
+
+<br><br><br><br>
+<% if(dont){ %>
+    <div style="display: flex; justify-content: center; align-items: center; width:90%;">
+        <div style="margin-left: 150px; margin-right: 25px; width: 75%;">
+
+            <div style="color: red; text-align: center;">
+                      
+                 con't insert(dossier)
+              </div>
+            <div  style=" text-align: center;">
+                <%= dont %>
+            </div>
+            <br>
+        </div>
+
+    </div>
+
+<% } %>
+
+
+ <main class="main">
+
+ 
+
+        <% if(message){ %>
+            <div style="text-align: center;">
+                <span style="color: red; ">
+                  
+                  <%=message%>
+                </span>
+
+            </div>
+            <% } %>
+            <% if(yes){ %>
+                <div style="text-align: center;">
+                    <span style="color: rgb(8, 235, 20); ">
+                      
+                      <%=yes%>
+                    </span>
+        
+                </div>
+                <% } %>
+    <form method="POST" action="/suivi/upload"  enctype="multipart/form-data" class="grid-container">
+        
+          <div class="form-group">
+            <label for="fileRep" style="cursor: pointer;">
+                <img src="/file.png" class="upload-icon" >
+    
+                 <br> 
+            <input type="file" id="fileRep" name="file" class="file" required />
+            <span id="filenameRep"></span> <br>
+            </label>
+            <input type="submit" class="btn btn-primary" value="upload" name="submit" style="cursor: pointer;"/>
+          </div>
+          
+      </form>
+
+      <div class="table-container table">
+        <table>
+          <thead class="thead-dark">
+              <tr>
+                  <th>
+                      matricule
+                  </th>
+                  <th>
+                      code organisme
+                  </th>
+                  <th>
+                      imputation
+                  </th>
+                  <th>
+                      dossier
+                  </th>
+                  <th>
+                      datedebet
+                  </th>
+                  <th>
+                      datfinet
+                  </th>
+             
+                  <th>
+                      totolpre
+                  </th>
+              
+                  <th>
+                
+                      restpaye
+                  </th>
+                  <th>
+                
+                      menspret
+                  </th>
+                  <th>
+                
+                      cumulpre
+                  </th>
+                  <th>
+                
+                      montcomp
+                  </th>
+                  <th>
+                
+                      etatpret
+                  </th>
+                  <th>
+                
+                      motifrad
+                  </th>
+                  <th>
+                    dteffrad
+                  </th>
+                  <th>
+                
+                      moisencr
+                  </th>
+                  
+              </tr>
+          </thead>
+          <tbody>
+            <% if(arr){ %>
+            <% for (let ele of arr) {%>
+  
+            <tr>
+                <td>
+                    <%=ele.matricule%>
+                </td>
+                <td>
+                    <%=ele.code_organisme%>
+                </td>
+                <td>
+                    <%=ele.imputation%>
+                </td>
+                <td>
+                    <%=ele.dossier%>
+                </td>
+                <td>
+                    <%=Intl.DateTimeFormat('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit'}).format(ele.datdebet)%>
+                </td>
+                <td>
+                  <%=Intl.DateTimeFormat('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit'}).format(ele.datefinet)%>
+                </td>
+                <td>
+                    <%=ele.totalpre%>
+                </td>
+                <td>
+                    <%=ele.restpaye%>
+                </td>
+                <td>
+                    <%=ele.menspret%>
+                </td>
+                <td>
+                    <%=ele.cumulpre%>
+                </td>
+                <td>
+                    <%=ele.montcomp%>
+                </td>
+                <td>
+                    <%=ele.etatpret%>
+                </td>
+                <td>
+                    <%=ele.motifrad%>
+                </td>
+                <td>
+                  <% if(ele.dteffrad){ %>
+  
+                  
+                  <%=Intl.DateTimeFormat('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit'}).format(ele.dteffrad)%>
+                  <% } %> 
+                  
+  
+  
+  
+                </td>
+                <td>
+                  <%=Intl.DateTimeFormat('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit'}).format(ele.moinsencr)%>
+  
+                </td>
+              
+                
+          
+               
+                
+            </tr>
+            <% } %> 
+            <% } %>
+  
+            
+  
+        </tbody>
+        </table>
+
+
+ <script>
+  
+
+
+    let input = document.getElementById("fileRep");
+    let filename = document.getElementById("filenameRep");
+
+    input.addEventListener("change", ()=>{
+        let inputImage = document.querySelector("input[type=file]").files[0];
+
+        filename.innerText = inputImage.name;
+
+        
+    })
+
+    
+ </script>
+    
+<%-include('layouts/battom.ejs')%>

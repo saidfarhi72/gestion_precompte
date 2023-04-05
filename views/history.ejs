@@ -1,0 +1,76 @@
+
+<%- include('layouts/top.ejs')%>
+
+<br><br><br><br><br><br>
+
+<main class="main">
+    <div class="box-nav d-flex justify-between"  >
+        <form method="POST" action="history" id="update_user"  class="box-nav d-flex row ">
+            <div class="box-nav d-flex row ">
+                <div class="form-group">
+                    <input type="text" name="dossier" value="" placeholder="dossier">
+                </div>
+        
+            </div>
+         
+            <button type="submit" class="text-gradient">cherche</button>
+        </form>
+    </div>
+
+<div class="table-container table">
+    <table>
+      <thead class="thead-dark">
+          <tr>
+            <th>
+                dossier
+            </th>
+              <th>
+                  operation
+              </th>
+              <th>
+                  date d'operation
+              </th>
+              <th>
+                  qui'a fait l'operation
+              </th>
+              <th>
+                remarque
+              </th>
+            
+              
+          </tr>
+      </thead>
+      <tbody>
+          <% if(arr){ %>
+          <% for (let ele of arr) {%>
+
+          <tr>
+            <td>
+                <%=ele.dossier%>
+            </td>
+              <td>
+                  <%=ele.operation%>
+              </td>
+              <td>
+                  <%=ele.date%>
+              </td>
+              <td>
+                  <%=ele.user%>
+              </td>
+              <td>
+                  <%=ele.remarque%>
+              </td>
+              
+          </tr>
+          <% } %> 
+          <% } %>
+
+          
+
+      </tbody>
+    </table>
+
+
+
+  </div>
+</main>
